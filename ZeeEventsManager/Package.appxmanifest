@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Package xmlns="http://schemas.microsoft.com/appx/manifest/foundation/windows10" xmlns:mp="http://schemas.microsoft.com/appx/2014/phone/manifest" xmlns:uap="http://schemas.microsoft.com/appx/manifest/uap/windows10" IgnorableNamespaces="uap mp">
+  <Identity Name="7393TrevyCo.577736EF26007" Publisher="CN=80468848-9C0C-4B75-88A7-BF8F586362DF" Version="1.2.0.0" />
+  <mp:PhoneIdentity PhoneProductId="137dc710-a278-4572-ac71-ae45f9be8818" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
+  <Properties>
+    <DisplayName>Zee Events Manager</DisplayName>
+    <PublisherDisplayName>CyberFeedForward</PublisherDisplayName>
+    <Logo>Assets\Logos\StoreLogo.png</Logo>
+  </Properties>
+  <Dependencies>
+    <TargetDeviceFamily Name="Windows.Universal" MinVersion="10.0.0.0" MaxVersionTested="10.0.0.0" />
+  </Dependencies>
+  <Resources>
+    <Resource Language="x-generate" />
+  </Resources>
+  <Applications>
+    <Application Id="App" Executable="$targetnametoken$.exe" EntryPoint="ZeeEventsManager.App">
+      <uap:VisualElements DisplayName="Zee Events Manager" Square150x150Logo="Assets\Logos\Square150x150Logo.png" Square44x44Logo="Assets\Logos\Square44x44Logo.png" Description="Zee Events Manager: A simple event manager for keeping track of events you host, and who shows up." BackgroundColor="transparent">
+        <uap:DefaultTile Wide310x150Logo="Assets\Logos\Wide310x150Logo.png" Square310x310Logo="Assets\Logos\Square310x310Logo.png" Square71x71Logo="Assets\Logos\Square71x71Logo.png" ShortName="Zee Events Manager">
+          <uap:ShowNameOnTiles>
+            <uap:ShowOn Tile="square150x150Logo" />
+            <uap:ShowOn Tile="wide310x150Logo" />
+            <uap:ShowOn Tile="square310x310Logo" />
+          </uap:ShowNameOnTiles>
+        </uap:DefaultTile>
+        <uap:SplashScreen Image="Assets\Logos\SplashScreen.png" BackgroundColor="lightBlue" />
+      </uap:VisualElements>
+    </Application>
+  </Applications>
+</Package>

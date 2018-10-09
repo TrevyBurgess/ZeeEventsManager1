@@ -1,0 +1,175 @@
+﻿<Page
+    x:Class="CyberFeedForward.WUP.Social.ZeeEventsManager.AddRemoveEventGuestsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CyberFeedForward.WUP.Social.ZeeEventsManager"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:wpf="using:CyberFeedForward.WUP.Common.WPF"
+    mc:Ignorable="d"
+    Name="allContactsPage1"
+     Background="White" >
+    <Page.Resources>
+        <CollectionViewSource x:Name="contactSource" IsSourceGrouped="True" />
+    </Page.Resources>
+    <Grid>
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup>
+                <VisualState x:Name="appPhoneWidth">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="{StaticResource AppPhoneWidth}" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="AcceptChanges.Visibility" Value="Visible" />
+                    </VisualState.Setters>
+                </VisualState>
+
+                <VisualState x:Name="appNarrowWidth">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="330" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="AcceptChanges.Visibility" Value="Collapsed" />
+                    </VisualState.Setters>
+                </VisualState>
+
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <TextBlock
+            x:Uid="EventEditAttendance_EditGuestList"
+            Text="~ Edit Guest List"
+            TextWrapping="Wrap"
+            FontSize="22" FontWeight="Bold" HorizontalAlignment="Center"
+            Margin="0,0,0,50"/>
+
+        <StackPanel
+            Grid.Row="1"
+            HorizontalAlignment="Center" Name="AcceptChangesPanel" >
+            <Button
+                Visibility="Collapsed"
+                Name="AcceptChanges"
+                Margin="10" Padding="10,0,10,0" Command="{x:Bind theEvent.AcceptAttendanceCommand}" >
+                <StackPanel Orientation="Horizontal">
+                    <SymbolIcon Symbol="Accept" />
+                    <TextBlock
+                        x:Uid="EventEditAttendance_AcceptChanges"
+                        Text="~ Accept Changes"
+                        Margin="10,0,0,0" />
+                </StackPanel>
+            </Button>
+        </StackPanel>
+        <StackPanel Grid.Row="2">
+            <TextBlock
+                Name="NavigateToNewContactsListPanel" 
+                x:Uid="EventEditAttendance_ContactListIsEmpty"
+                TextAlignment="Center"
+                TextWrapping="Wrap"
+                Text="~ Your Contact List is empty. Please add new contacts." />
+            <Button
+                Command="{x:Bind allContacts.NavigatedFromEvent}"
+                Name="NavigateToNewContactsList"
+                HorizontalAlignment="Center"
+                Margin="10" Padding="10,0,10,0" >
+                <StackPanel Orientation="Horizontal">
+                    <SymbolIcon Symbol="People" />
+                    <TextBlock
+                        x:Uid="EventEditAttendance_GoToContacts"
+                        Text="~ Go to My Contacts"
+                        Margin="10,0,0,0" />
+                </StackPanel>
+            </Button>
+        </StackPanel>
+
+        <SemanticZoom
+            Grid.Row="3"
+            Name="zoom" IsZoomOutButtonEnabled="True" >
+            <SemanticZoom.ZoomedInView>
+                <GridView
+                    ItemsSource="{Binding Source={StaticResource contactSource}, Mode=OneWay}"
+                    SelectionMode="Multiple"
+                    Name="GuestGridViewIn"
+                    IsItemClickEnabled="True" >
+                    <GridView.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <ItemsWrapGrid Orientation="Horizontal" />
+                        </ItemsPanelTemplate>
+                    </GridView.ItemsPanel>
+                    <GridView.GroupStyle >
+                        <GroupStyle>
+                            <GroupStyle.HeaderTemplate >
+                                <DataTemplate >
+                                    <RelativePanel >
+                                        <TextBlock
+                                            Name="TitleBlock"
+                                            RelativePanel.AlignLeftWithPanel="True"
+                                            RelativePanel.AlignVerticalCenterWithPanel="True"
+                                            Text="{Binding Key.Title}" Margin="0,0,10,0"
+                                            Style="{StaticResource TitleTextBlockStyle}" />
+                                        <TextBlock
+                                            RelativePanel.RightOf="TitleBlock"
+                                            RelativePanel.AlignVerticalCenterWithPanel="True"
+                                            Text="{StaticResource ChevronGlyph}"
+                                            FontFamily="Segoe MDL2 Assets"
+                                            FontWeight="Normal"
+                                            Style="{StaticResource TitleTextBlockStyle}" />
+                                    </RelativePanel>
+                                </DataTemplate>
+                            </GroupStyle.HeaderTemplate>
+                        </GroupStyle>
+                    </GridView.GroupStyle>
+                    <GridView.ItemTemplate>
+                        <DataTemplate x:DataType="local:ContactItemModel" >
+                            <StackPanel
+                                Orientation="Horizontal"
+                                HorizontalAlignment="Center"
+                                Width="{StaticResource ContactItemWidth}"
+                                BorderThickness="1" BorderBrush="DarkBlue"
+                                Background="AliceBlue" >
+                                <Image RelativePanel.AlignLeftWithPanel="True"
+                                    Name="ContactImage"
+                                    Source="{x:Bind ImagePath}"
+                                    Stretch="UniformToFill"
+                                    Width="{StaticResource ContactItemImageWidth}"
+                                    Height="{StaticResource ContactItemImageHeight}" />
+                                <StackPanel HorizontalAlignment="Center" Padding="5" >
+                                    <TextBlock Name="TitleBlock"
+                                       RelativePanel.AlignLeftWith="ContactImage"
+                                       Text="{x:Bind PageTitle}"
+                                       Margin="0,0,0,5" />
+                                    <TextBlock Name="EmailBlock"
+                                       RelativePanel.AlignTopWith="TitleBlock"
+                                       Text="{x:Bind EmailAddress}"
+                                       Margin="0,5,0,0" />
+                                </StackPanel>
+                            </StackPanel>
+                        </DataTemplate>
+                    </GridView.ItemTemplate>
+                </GridView>
+            </SemanticZoom.ZoomedInView>
+            <SemanticZoom.ZoomedOutView >
+                <GridView Name="GuestGridViewOut" >
+                    <GridView.ItemTemplate>
+                        <DataTemplate >
+                            <Border Width="{StaticResource ContactItemTemplateWidth}"
+                                Height="{StaticResource ContactItemTemplateHeight}"
+                                BorderThickness="2" BorderBrush="Black" >
+                                <TextBlock
+                                    Style="{StaticResource TitleTextBlockStyle}"
+                                    Text="{Binding Group.Key.Title}"
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center" />
+                            </Border>
+                        </DataTemplate>
+                    </GridView.ItemTemplate>
+                </GridView>
+            </SemanticZoom.ZoomedOutView>
+        </SemanticZoom>
+    </Grid>
+</Page>

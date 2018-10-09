@@ -1,0 +1,44 @@
+﻿<Page
+    x:Class="CyberFeedForward.WUP.Social.ZeeEventsManager.AboutPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+     Background="White" >
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <StackPanel Padding="10" >
+            <TextBlock x:Uid="About_DescriptionHeader" FontWeight="Bold" Text="~ Description:" />
+            <TextBlock x:Uid="About_Description" TextWrapping="WrapWholeWords" >~ Zee Events Manager: A simple event manager for keeping track of 
+            events you host, and who shows up.</TextBlock>
+            <TextBlock x:Uid="Settings_CopyrightNotice.Text" Margin="0,10,0,10" />
+
+            <TextBlock x:Uid="About_MediaContentHeader" FontWeight="Bold" />
+            <RichTextBlock>
+                <Paragraph >
+                    <Run x:Uid="About_MediaContent_Header" FontWeight="SemiBold" Text="~ Images come from:" />
+                    <Run Text="_" Foreground="White" />
+                    <Hyperlink NavigateUri="https://openclipart.org/" >www.OpenClipart.org</Hyperlink>
+                    <Run Text="_" Foreground="White" />
+                    <Hyperlink
+                        UnderlineStyle="None"
+                        NavigateUri="https://openclipart.org/share" >
+                        <Run x:Uid="About_MediaContent_Usage" Text="~ (Usage)" />
+                    </Hyperlink>
+                </Paragraph>
+            </RichTextBlock>
+
+            <TextBlock
+                Margin="0,50,0,0"
+                x:Uid="Settings_CopyrightNotice"
+                RelativePanel.Above="PrivacyPolicy"
+                Text="~ © 2016 Trevy Burgess"
+                Name="CopyrightNotice" />
+            <HyperlinkButton
+                x:Uid="Settings_PrivacyPolicy"
+                Name="PrivacyPolicy"
+                RelativePanel.AlignBottomWithPanel="True"
+                Content="~ Privacy Policy" />
+        </StackPanel>
+    </ScrollViewer>
+</Page>

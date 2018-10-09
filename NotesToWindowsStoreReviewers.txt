@@ -1,0 +1,23 @@
+Privacy Policy
+==============
+Smiley button: Allow user to send smiles and frowns using standard email.
+Privacy link: http://CyberFeedForward.com/ZeeEventsManager/PrivacyPolicy.html
+Locations in App: "About" page, "Settings" page, and smiley button (top right of window)
+
+Media content
+=============
+Media content: www.OpenClipart.org
+Media content policy: https://openclipart.org/share
+
+Add contact:
+1: Go to My Contacts
+2: Click "Add contact"
+3: Click blue person icon
+
+To add event:
+1: Go to Calendar
+2: Click "Add New Event"
+3: Click "Event Icon"
+
+=============
+Data saved to roaming folder

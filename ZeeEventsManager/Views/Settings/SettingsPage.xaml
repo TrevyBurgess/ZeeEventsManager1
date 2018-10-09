@@ -1,0 +1,27 @@
+﻿<Page
+    x:Class="CyberFeedForward.WUP.Social.ZeeEventsManager.SettingsPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CyberFeedForward.WUP.Social.ZeeEventsManager"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:wpf="using:CyberFeedForward.WUP.Common.WPF"
+    mc:Ignorable="d"
+     Background="White" >
+    <RelativePanel Margin="20">
+        <CheckBox
+            x:Uid="Settings_SetNameInStandardFormat"
+                IsChecked="{x:Bind Settings.UserNameInStandardFormat, Mode=TwoWay}"
+                Content="~ Set name in standard format: Last, First" />
+        <TextBlock
+            x:Uid="Settings_CopyrightNotice"
+            RelativePanel.Above="PrivacyPolicy"
+            Text="~ © 2016 Trevy Burgess"
+            Name="CopyrightNotice" />
+        <HyperlinkButton
+            x:Uid="Settings_PrivacyPolicy"
+            Name="PrivacyPolicy"
+            RelativePanel.AlignBottomWithPanel="True"
+            Content="~ Privacy Policy" />
+    </RelativePanel>
+</Page>

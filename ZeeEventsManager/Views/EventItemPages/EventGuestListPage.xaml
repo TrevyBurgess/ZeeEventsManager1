@@ -1,0 +1,110 @@
+﻿<Page
+    x:Class="CyberFeedForward.WUP.Social.ZeeEventsManager.EventGuestListPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CyberFeedForward.WUP.Social.ZeeEventsManager"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:wpf="using:CyberFeedForward.WUP.Common.WPF"
+    mc:Ignorable="d"
+    Name="allContactsPage1"
+     Background="White" >
+    <Page.Resources>
+        <CollectionViewSource x:Name="contactSource" IsSourceGrouped="True" />
+    </Page.Resources>
+    <StackPanel Name="GuestPanel" Tapped="GuestPanel_Tapped">
+        <SemanticZoom Name="zoom" >
+            <SemanticZoom.ZoomedInView>
+                <GridView
+                    Background="LightGray"
+                    ItemsSource="{Binding Source={StaticResource contactSource}, Mode=OneWay}"
+                    SelectionMode="None"
+                    Name="GuestGridViewIn"
+                    IsItemClickEnabled="False"                
+                    ItemClick="GuestGridView_ItemClick" IsTabStop="True" >
+                    <GridView.HeaderTemplate>
+                        <DataTemplate>
+                            <TextBlock
+                                x:Uid="EventGuestList_Guests"
+                                Text="~ Guests"
+                                FontSize="22"
+                                FontWeight="Bold"
+                                HorizontalAlignment="Center" />
+                        </DataTemplate>
+                    </GridView.HeaderTemplate>
+
+                    <GridView.GroupStyle >
+                        <GroupStyle>
+                            <GroupStyle.HeaderTemplate >
+                                <DataTemplate >
+                                    <RelativePanel >
+                                        <TextBlock
+                                            Name="TitleBlock"
+                                            RelativePanel.AlignLeftWithPanel="True"
+                                            RelativePanel.AlignVerticalCenterWithPanel="True"
+                                            Text="{Binding Key.Title}" Margin="0,0,10,0"
+                                            Style="{StaticResource TitleTextBlockStyle}" />
+                                        <TextBlock
+                                            x:Uid="EventGuestList_" 
+                                            RelativePanel.RightOf="TitleBlock"
+                                            RelativePanel.AlignVerticalCenterWithPanel="True"
+                                            Text="{StaticResource ChevronGlyph}"
+                                            FontFamily="Segoe MDL2 Assets"
+                                            FontWeight="Normal"
+                                            Style="{StaticResource TitleTextBlockStyle}" />
+                                    </RelativePanel>
+                                </DataTemplate>
+                            </GroupStyle.HeaderTemplate>
+                        </GroupStyle>
+                    </GridView.GroupStyle>
+                    <GridView.ItemTemplate>
+                        <DataTemplate x:DataType="local:EventGuest" >
+                            <StackPanel
+                                Orientation="Horizontal"
+                                HorizontalAlignment="Center"
+                                Width="{StaticResource ContactItemWidth}"
+                                BorderThickness="1" BorderBrush="DarkBlue"
+                                Background="AliceBlue"
+                                >
+                                <Image RelativePanel.AlignLeftWithPanel="True" 
+                                    Name="ContactImage"
+                                    Source="{x:Bind Guest.ImagePath}"
+                                    Stretch="UniformToFill"
+                                    Width="{StaticResource ContactItemImageWidth}"
+                                    Height="{StaticResource ContactItemImageHeight}" />
+                                <StackPanel HorizontalAlignment="Center" Padding="5" >
+                                    <TextBlock Name="TitleBlock"
+                                       RelativePanel.AlignLeftWith="ContactImage"
+                                       Text="{x:Bind PageTitle}"
+                                       Margin="0,0,0,5" />
+                                    <TextBlock Name="EmailBlock"
+                                       RelativePanel.AlignTopWith="TitleBlock"
+                                       Text="{x:Bind Guest.EmailAddress}"
+                                       Margin="0,5,0,0" />
+                                </StackPanel>
+                            </StackPanel>
+                        </DataTemplate>
+                    </GridView.ItemTemplate>
+                </GridView>
+            </SemanticZoom.ZoomedInView>
+            <SemanticZoom.ZoomedOutView >
+                <GridView Name="GuestGridViewOut" >
+                    <GridView.ItemTemplate>
+                        <DataTemplate >
+                            <Border Width="{StaticResource ContactItemTemplateWidth}"
+                                Height="{StaticResource ContactItemTemplateHeight}"
+                                BorderThickness="2" BorderBrush="Black" >
+                                <TextBlock
+                                    Style="{StaticResource TitleTextBlockStyle}"
+                                    Text="{Binding Group.Key.Title}"
+                                    HorizontalAlignment="Center"
+                                    VerticalAlignment="Center"
+                                />
+                            </Border>
+                        </DataTemplate>
+                    </GridView.ItemTemplate>
+                </GridView>
+            </SemanticZoom.ZoomedOutView>
+        </SemanticZoom>
+    </StackPanel>
+</Page>

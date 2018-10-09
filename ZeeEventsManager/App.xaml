@@ -1,0 +1,51 @@
+﻿<Application
+    x:Class="CyberFeedForward.WUP.Social.ZeeEventsManager.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CyberFeedForward.WUP.Social.ZeeEventsManager"
+    xmlns:wpf="using:CyberFeedForward.WUP.Common.WPF"
+    RequestedTheme="Light">
+
+    <Application.Resources>
+        <wpf:BooleanToVisibilityConverter IsReversed="False" x:Key="ConvertBoolToVisible" />
+        <wpf:BooleanToVisibilityConverter IsReversed="True" x:Key="ConvertReversedBoolToVisible" />
+        <local:IsEnabledConverter x:Key="ConvertBoolToEnabledColor" />
+        <local:GuestArrivalSymbolConverter x:Key="GustSymbolConverter" />
+        <local:GuestArrivalColorConverter x:Key="GustColorConverter" />
+        <local:EventBackgroundConverter x:Key="ConvertEventBackground" />
+        <local:EventBorderConverter x:Key="ConvertEventBorder" />
+        <local:DateTimeOffsetConverter x:Key="ConvertDateTimeOffset" />
+
+        <!-- App sizes: Phone -->
+        <x:Double x:Key="AppPhoneWidth" >0</x:Double>
+        <!-- App sizes: Narrow -->
+        <x:Double x:Key="AppNarrowWidth" >480</x:Double>
+        <!-- App sizes: Medium -->
+        <x:Double x:Key="AppMediumWidth" >600</x:Double>
+        <!-- App sizes: Wide -->
+        <x:Double x:Key="AppWideWidth" >900</x:Double>
+        <!-- App sizes: Full -->
+        <x:Double x:Key="AppDoubleWidth" >1200</x:Double>
+
+        <!-- Hamburger dimensions -->
+        <x:Double x:Key="HamburgerOpenWidth" >220</x:Double>
+
+        <!-- Contact related dimensions -->
+        <x:Double x:Key="ContactItemWidth" >280</x:Double>
+        <x:Double x:Key="ContactItemImageWidth" >72</x:Double>
+        <x:Double x:Key="ContactItemImageHeight" >72</x:Double>
+        <x:Double x:Key="ContactItemTemplateWidth" >72</x:Double>
+        <x:Double x:Key="ContactItemTemplateHeight" >72</x:Double>
+        <x:Double x:Key="ContactAttendanceItemWidth" >200</x:Double>
+        <x:Double x:Key="ContactShowSidePanelWidth" >1450</x:Double>
+
+        <x:String x:Key="ChevronGlyph">&#xE26B;</x:String>
+
+        <ResourceDictionary x:Key="Resources" >
+            <ResourceDictionary.MergedDictionaries >
+                <ResourceDictionary Source="Resources/DataTemplates.xaml" />
+                <ResourceDictionary Source="Resources/StandardResources.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

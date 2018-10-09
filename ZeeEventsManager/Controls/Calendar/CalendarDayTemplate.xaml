@@ -1,0 +1,137 @@
+﻿<UserControl
+    x:Class="CyberFeedForward.WUP.Social.ZeeEventsManager.CalendarDayTemplate"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CyberFeedForward.WUP.Social.ZeeEventsManager"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="300"
+    d:DesignWidth="400" >
+    <Grid >
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup>
+
+                <VisualState x:Name="phoneWidth">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="{StaticResource AppPhoneWidth}" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="dayPanel.Visibility" Value="Visible" />
+                        <Setter Target="dayPanel.Width" Value="48" />
+                        <Setter Target="dayPanel.Height" Value="112" />
+                        <Setter Target="shortDayName.Visibility" Value="Visible" />
+                        <Setter Target="longDayName.Visibility" Value="Collapsed" />
+                        <Setter Target="dayNumber.FontSize" Value="9" />
+                        <Setter Target="dash.FontSize" Value="9" />
+                        <Setter Target="dash.Margin" Value="2,0,2,0" />
+                        <Setter Target="dayGrid.Margin" Value="2,12,2,0" />
+                    </VisualState.Setters>
+                </VisualState>
+
+                <VisualState x:Name="smallWidth">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="{StaticResource AppNarrowWidth}" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="dayPanel.Visibility" Value="Visible" />
+                        <Setter Target="dayPanel.Width" Value="70" />
+                        <Setter Target="dayPanel.Height" Value="152" />
+                        <Setter Target="shortDayName.Visibility" Value="Visible" />
+                        <Setter Target="longDayName.Visibility" Value="Collapsed" />
+                        <Setter Target="dayNumber.FontSize" Value="9" />
+                        <Setter Target="dash.FontSize" Value="9" />
+                        <Setter Target="dash.Margin" Value="2,0,2,0" />
+                        <Setter Target="dayGrid.Margin" Value="0,12,0,0" />
+                    </VisualState.Setters>
+                </VisualState>
+
+                <VisualState x:Name="mediumWidth">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="1030" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="dayPanel.Visibility" Value="Visible" />
+                        <Setter Target="dayPanel.Width" Value="100" />
+                        <Setter Target="dayPanel.Height" Value="200" />
+                        <Setter Target="dayGrid.Margin" Value="2,15,2,0" />
+                        <Setter Target="shortDayName.Visibility" Value="Collapsed" />
+                        <Setter Target="longDayName.Visibility" Value="Visible" />
+                    </VisualState.Setters>
+                </VisualState>
+
+                <VisualState x:Name="largeWidth">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="1380" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="dayPanel.Visibility" Value="Visible" />
+                        <Setter Target="dayPanel.Width" Value="150" />
+                        <Setter Target="dayPanel.Height" Value="250" />
+                        <Setter Target="dayGrid.Margin" Value="5,25,5,0" />
+                        <Setter Target="shortDayName.Visibility" Value="Collapsed" />
+                        <Setter Target="longDayName.Visibility" Value="Visible" />
+                    </VisualState.Setters>
+                </VisualState>
+
+                <VisualState x:Name="xLargeWidth">
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="1750" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="dayPanel.Visibility" Value="Visible" />
+                        <Setter Target="dayPanel.Width" Value="200" />
+                        <Setter Target="dayPanel.Height" Value="300" />
+                        <Setter Target="dayGrid.Margin" Value="5,25,5,0" />
+                        <Setter Target="shortDayName.Visibility" Value="Collapsed" />
+                        <Setter Target="longDayName.Visibility" Value="Visible" />
+                    </VisualState.Setters>
+                </VisualState>
+
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+        <Grid
+            VerticalAlignment="Top"
+            BorderThickness="1"
+            Background="{x:Bind CalendarDayModel.IsValidDay, Mode=OneWay, Converter={StaticResource ConvertBoolToEnabledColor}}"
+            Visibility="Collapsed"
+            Name="dayPanel"
+            BorderBrush="LightBlue" >
+            <StackPanel
+                Background="AliceBlue"
+                Visibility="{x:Bind CalendarDayModel.IsValidDay, Mode=OneWay, Converter={StaticResource ConvertBoolToVisible}}" HorizontalAlignment="Stretch" VerticalAlignment="Top"
+                Orientation="Horizontal" >
+                <TextBlock
+                    Name="longDayName"
+                    Text="{x:Bind CalendarDayModel.DayName}" FontSize="12" />
+                <TextBlock
+                    Name="shortDayName"
+                    Text="{x:Bind CalendarDayModel.ShortDayName}" FontSize="9" />
+                <TextBlock
+                    Name="dash"
+                    Text="-" FontSize="12" Margin="5,0,5,0" />
+                <TextBlock
+                    Name="dayNumber"
+                    Text="{x:Bind CalendarDayModel.Day}" FontSize="12" />
+            </StackPanel>
+            <GridView
+                IsEnabled="{x:Bind CalendarDayModel.IsValidDay, Mode=OneWay}"
+                ItemsSource="{x:Bind CalendarDayModel.DayEvents, Mode=OneWay}"
+                SelectionMode="None"
+                Name="dayGrid"
+                IsItemClickEnabled="{x:Bind CalendarDayModel.IsValidDay, Mode=OneWay}"
+                ItemClick="EventEntry_ItemClick" >
+                <GridView.ItemTemplate>
+                    <DataTemplate x:DataType="local:CalendarDayModel" >
+                        <local:EventItemTemplate />
+                    </DataTemplate>
+                </GridView.ItemTemplate>
+                <GridView.ItemsPanel>
+                    <ItemsPanelTemplate >
+                        <ItemsStackPanel />
+                    </ItemsPanelTemplate>
+                </GridView.ItemsPanel>
+            </GridView>
+        </Grid>
+    </Grid>
+</UserControl>

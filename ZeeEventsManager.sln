@@ -1,0 +1,109 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{1155E9BE-A3C8-4C75-AE06-8640A8C4DCD4}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{D907AB67-18D3-4EB7-81AF-B65425057F6E}"
+	ProjectSection(SolutionItems) = preProject
+		NotesToWindowsStoreReviewers.txt = NotesToWindowsStoreReviewers.txt
+		Readme.txt = Readme.txt
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZeeEventsManager", "ZeeEventsManager\ZeeEventsManager.csproj", "{3F2991C4-7646-446E-84BB-229E9E3B6D54}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CyberFeedForward.WUP.Common", "CyberFeedforward.WinStore.Common\CyberFeedForward.WUP.Common.csproj", "{7E20528D-7E81-4128-9345-F8C21C211053}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CyberFeedForward.WUP.Data", "CyberFeedForward.WUP.Data\CyberFeedForward.WUP.Data.csproj", "{E6D67034-747F-44E9-94AA-57DE68996C24}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|ARM = Debug|ARM
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|ARM = Release|ARM
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3F2991C4-7646-446E-84BB-229E9E3B6D54}.Debug|Any CPU.ActiveCfg = Debug|x86
+		{3F2991C4-7646-446E-84BB-229E9E3B6D54}.Debug|ARM.ActiveCfg = Debug|ARM
+		{3F2991C4-7646-446E-84BB-229E9E3B6D54}.Debug|ARM.Build.0 = Debug|ARM
+		{3F2991C4-7646-446E-84BB-229E9E3B6D54}.Debug|ARM.Deploy.0 = Debug|ARM
+		{3F2991C4-7646-446E-84BB-229E9E3B6D54}.Debug|x64.ActiveCfg = Debug|x64
+		{3F2991C4-7646-446E-84BB-229E9E3B6D54}.Debug|x64.Build.0 = Debug|x64
+		{3F2991C4-7646-446E-84BB-229E9E3B6D54}.Debug|x64.Deploy.0 = Debug|x64
+		{3F2991C4-7646-446E-84BB-229E9E3B6D54}.Debug|x86.ActiveCfg = Debug|x86
+		{3F2991C4-7646-446E-84BB-229E9E3B6D54}.Debug|x86.Build.0 = Debug|x86
+		{3F2991C4-7646-446E-84BB-229E9E3B6D54}.Debug|x86.Deploy.0 = Debug|x86
+		{3F2991C4-7646-446E-84BB-229E9E3B6D54}.Release|Any CPU.ActiveCfg = Release|x86
+		{3F2991C4-7646-446E-84BB-229E9E3B6D54}.Release|ARM.ActiveCfg = Release|ARM
+		{3F2991C4-7646-446E-84BB-229E9E3B6D54}.Release|ARM.Build.0 = Release|ARM
+		{3F2991C4-7646-446E-84BB-229E9E3B6D54}.Release|ARM.Deploy.0 = Release|ARM
+		{3F2991C4-7646-446E-84BB-229E9E3B6D54}.Release|x64.ActiveCfg = Release|x64
+		{3F2991C4-7646-446E-84BB-229E9E3B6D54}.Release|x64.Build.0 = Release|x64
+		{3F2991C4-7646-446E-84BB-229E9E3B6D54}.Release|x64.Deploy.0 = Release|x64
+		{3F2991C4-7646-446E-84BB-229E9E3B6D54}.Release|x86.ActiveCfg = Release|x86
+		{3F2991C4-7646-446E-84BB-229E9E3B6D54}.Release|x86.Build.0 = Release|x86
+		{3F2991C4-7646-446E-84BB-229E9E3B6D54}.Release|x86.Deploy.0 = Release|x86
+		{7E20528D-7E81-4128-9345-F8C21C211053}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E20528D-7E81-4128-9345-F8C21C211053}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E20528D-7E81-4128-9345-F8C21C211053}.Debug|ARM.ActiveCfg = Debug|ARM
+		{7E20528D-7E81-4128-9345-F8C21C211053}.Debug|ARM.Build.0 = Debug|ARM
+		{7E20528D-7E81-4128-9345-F8C21C211053}.Debug|x64.ActiveCfg = Debug|x64
+		{7E20528D-7E81-4128-9345-F8C21C211053}.Debug|x64.Build.0 = Debug|x64
+		{7E20528D-7E81-4128-9345-F8C21C211053}.Debug|x86.ActiveCfg = Debug|x86
+		{7E20528D-7E81-4128-9345-F8C21C211053}.Debug|x86.Build.0 = Debug|x86
+		{7E20528D-7E81-4128-9345-F8C21C211053}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E20528D-7E81-4128-9345-F8C21C211053}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E20528D-7E81-4128-9345-F8C21C211053}.Release|ARM.ActiveCfg = Release|ARM
+		{7E20528D-7E81-4128-9345-F8C21C211053}.Release|ARM.Build.0 = Release|ARM
+		{7E20528D-7E81-4128-9345-F8C21C211053}.Release|x64.ActiveCfg = Release|x64
+		{7E20528D-7E81-4128-9345-F8C21C211053}.Release|x64.Build.0 = Release|x64
+		{7E20528D-7E81-4128-9345-F8C21C211053}.Release|x86.ActiveCfg = Release|x86
+		{7E20528D-7E81-4128-9345-F8C21C211053}.Release|x86.Build.0 = Release|x86
+		{E6D67034-747F-44E9-94AA-57DE68996C24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6D67034-747F-44E9-94AA-57DE68996C24}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E6D67034-747F-44E9-94AA-57DE68996C24}.Debug|ARM.ActiveCfg = Debug|ARM
+		{E6D67034-747F-44E9-94AA-57DE68996C24}.Debug|ARM.Build.0 = Debug|ARM
+		{E6D67034-747F-44E9-94AA-57DE68996C24}.Debug|x64.ActiveCfg = Debug|x64
+		{E6D67034-747F-44E9-94AA-57DE68996C24}.Debug|x64.Build.0 = Debug|x64
+		{E6D67034-747F-44E9-94AA-57DE68996C24}.Debug|x86.ActiveCfg = Debug|x86
+		{E6D67034-747F-44E9-94AA-57DE68996C24}.Debug|x86.Build.0 = Debug|x86
+		{E6D67034-747F-44E9-94AA-57DE68996C24}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E6D67034-747F-44E9-94AA-57DE68996C24}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E6D67034-747F-44E9-94AA-57DE68996C24}.Release|ARM.ActiveCfg = Release|ARM
+		{E6D67034-747F-44E9-94AA-57DE68996C24}.Release|ARM.Build.0 = Release|ARM
+		{E6D67034-747F-44E9-94AA-57DE68996C24}.Release|x64.ActiveCfg = Release|x64
+		{E6D67034-747F-44E9-94AA-57DE68996C24}.Release|x64.Build.0 = Release|x64
+		{E6D67034-747F-44E9-94AA-57DE68996C24}.Release|x86.ActiveCfg = Release|x86
+		{E6D67034-747F-44E9-94AA-57DE68996C24}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{7E20528D-7E81-4128-9345-F8C21C211053} = {1155E9BE-A3C8-4C75-AE06-8640A8C4DCD4}
+		{E6D67034-747F-44E9-94AA-57DE68996C24} = {1155E9BE-A3C8-4C75-AE06-8640A8C4DCD4}
+	EndGlobalSection
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 4
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://trevyburgess.visualstudio.com/defaultcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = CyberFeedforward.WinStore.Common\\CyberFeedForward.WUP.Common.csproj
+		SccProjectTopLevelParentUniqueName1 = ZeeEventsManager.sln
+		SccProjectName1 = CyberFeedforward.WinStore.Common
+		SccLocalPath1 = CyberFeedforward.WinStore.Common
+		SccProjectUniqueName2 = ZeeEventsManager\\ZeeEventsManager.csproj
+		SccProjectName2 = ZeeEventsManager
+		SccLocalPath2 = ZeeEventsManager
+		SccProjectUniqueName3 = CyberFeedForward.WUP.Data\\CyberFeedForward.WUP.Data.csproj
+		SccProjectTopLevelParentUniqueName3 = ZeeEventsManager.sln
+		SccProjectName3 = CyberFeedForward.WUP.Data
+		SccLocalPath3 = CyberFeedForward.WUP.Data
+	EndGlobalSection
+EndGlobal

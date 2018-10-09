@@ -1,0 +1,71 @@
+﻿<Page
+    x:Class="CyberFeedForward.WUP.Social.ZeeEventsManager.CalendarMonthPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CyberFeedForward.WUP.Social.ZeeEventsManager"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:wpf="using:CyberFeedForward.WUP.Common.WPF"
+    mc:Ignorable="d"
+    Background="{x:Null}"
+    Name="CalendarPage1" >
+    <Grid >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <RelativePanel Grid.Row="0" >
+            <Button
+                Name="BackButton" Margin="6"
+                ToolTipService.ToolTip="{x:Bind calendarModel.PreviousMonthName, Mode=OneWay}"
+                Content="&#xE0A6;" FontFamily="Segoe MDL2 Assets" FontSize="20"
+                RelativePanel.AlignLeftWithPanel="True" BorderBrush="Black"
+                Command="{x:Bind calendarModel.PreviousMonth}" />
+            <Button
+                Name="CurrentMonth"
+                Content="{x:Bind calendarModel.CurrentMonth, Mode=OneWay}" FontSize="24" FontWeight="Bold"
+                RelativePanel.AlignHorizontalCenterWithPanel="True"
+                RelativePanel.AlignVerticalCenterWithPanel="True" >
+                <Button.Flyout>
+                    <DatePickerFlyout
+                        Placement="Bottom"
+                        Date="{x:Bind calendarModel.CurrentDate, Mode=TwoWay, Converter={StaticResource ConvertDateTimeOffset}}" DayVisible="False" />
+                </Button.Flyout>
+            </Button>
+            <Button
+                Name="ForwardButton" Margin="6"
+                ToolTipService.ToolTip="{x:Bind calendarModel.NextMonthName, Mode=OneWay}"
+                Content="&#xE0AB;" FontFamily="Segoe MDL2 Assets" FontSize="20"
+                RelativePanel.AlignRightWithPanel="True" BorderBrush="Black"
+                Command="{x:Bind calendarModel.NextMonth}" />
+        </RelativePanel>
+
+        <GridView
+            Margin="0,10,0,0"
+            Grid.Row="2"
+            ItemsSource="{x:Bind calendarModel.CalendarDays, Mode=OneWay}"
+            SelectionMode="None"
+            Name="CalendarGridView"
+            IsItemClickEnabled="True"
+            ItemClick="CalendarGridView_ItemClick" >
+            <GridView.HeaderTemplate>
+                <DataTemplate>
+                    <local:CalendarDayNamesTemplate x:Name="calendarDayNamesTemplate" />                    
+                </DataTemplate>                
+            </GridView.HeaderTemplate>            
+            <GridView.ItemTemplate>
+                <DataTemplate x:DataType="local:EventItemTemplate" >
+                    <local:CalendarDayTemplate x:Name="calendarDayTemplate" />
+                </DataTemplate>
+            </GridView.ItemTemplate>
+            <GridView.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <ItemsWrapGrid
+                        MaximumRowsOrColumns="7"
+                        Orientation="Horizontal" />
+                </ItemsPanelTemplate>
+            </GridView.ItemsPanel>
+        </GridView>
+    </Grid>
+</Page>

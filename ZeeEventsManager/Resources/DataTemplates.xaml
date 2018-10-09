@@ -1,0 +1,45 @@
+﻿<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" >
+
+    <DataTemplate x:Key="EventSelectorItemTemplate1" >
+        <Grid>
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup>
+                    <VisualStateGroup.Transitions>
+                        <VisualTransition GeneratedDuration="0">
+                            <VisualTransition.GeneratedEasingFunction>
+                                <BackEase EasingMode="EaseIn" />
+                            </VisualTransition.GeneratedEasingFunction>
+                        </VisualTransition>
+                    </VisualStateGroup.Transitions>
+                    <VisualState x:Name="AppPhoneWidth">
+                        <VisualState.StateTriggers>
+                            <AdaptiveTrigger MinWindowWidth="{StaticResource AppPhoneWidth}" />
+                        </VisualState.StateTriggers>
+                        <VisualState.Setters>
+                            <Setter Target="EventImageSelectionButton.Width" Value="65" />
+                            <Setter Target="EventImageSelectionButton.Height" Value="65" />
+                        </VisualState.Setters>
+                    </VisualState>
+                    <VisualState x:Name="wideState">
+                        <VisualState.StateTriggers>
+                            <AdaptiveTrigger MinWindowWidth="{StaticResource AppMediumWidth}" />
+                        </VisualState.StateTriggers>
+                        <VisualState.Setters>
+                            <Setter Target="EventImageSelectionButton.Width" Value="300" />
+                            <Setter Target="EventImageSelectionButton.Height" Value="300" />
+                        </VisualState.Setters>
+                    </VisualState>
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+            <Button
+                Name="EventImageSelectionButton" Tag="{Binding}" >
+                <Button.Background>
+                    <ImageBrush Stretch="Fill" ImageSource="{Binding}" />
+                </Button.Background>
+            </Button>
+        </Grid>
+    </DataTemplate>
+
+</ResourceDictionary>

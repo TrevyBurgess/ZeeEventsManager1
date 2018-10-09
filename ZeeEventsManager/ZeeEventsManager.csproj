@@ -1,0 +1,460 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProjectGuid>{3F2991C4-7646-446E-84BB-229E9E3B6D54}</ProjectGuid>
+    <OutputType>AppContainerExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CyberFeedforward.WUP.Social.ZeeEventsManager</RootNamespace>
+    <AssemblyName>ZeeEventsManager</AssemblyName>
+    <DefaultLanguage>en-US</DefaultLanguage>
+    <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
+    <TargetPlatformVersion>10.0.10586.0</TargetPlatformVersion>
+    <TargetPlatformMinVersion>10.0.10240.0</TargetPlatformMinVersion>
+    <MinimumVisualStudioVersion>14</MinimumVisualStudioVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{A5A43C5B-DE2A-4C0C-9213-0A381AF9435A};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <PackageCertificateKeyFile>ZeeEventsManager_StoreKey.pfx</PackageCertificateKeyFile>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <AppxAutoIncrementPackageRevision>False</AppxAutoIncrementPackageRevision>
+    <AppxBundle>Always</AppxBundle>
+    <AppxBundlePlatforms>x86|x64</AppxBundlePlatforms>
+    <PackageCertificateThumbprint>75A521CFF2624CB3CD33241493B640BB720FC4CA</PackageCertificateThumbprint>
+    <AppxPackageDir>D:\</AppxPackageDir>
+    <GenerateAppInstallerFile>False</GenerateAppInstallerFile>
+    <AppInstallerUpdateFrequency>1</AppInstallerUpdateFrequency>
+    <AppInstallerCheckForUpdateFrequency>OnApplicationRun</AppInstallerCheckForUpdateFrequency>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+    <RunCodeAnalysis>false</RunCodeAnalysis>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|ARM'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\ARM\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|ARM'">
+    <OutputPath>bin\ARM\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>ARM</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE;NETFX_CORE;WINDOWS_UWP</DefineConstants>
+    <Optimize>true</Optimize>
+    <NoWarn>;2008</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+    <UseDotNetNativeToolchain>true</UseDotNetNativeToolchain>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
+    <Content Include="ApplicationInsights.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <PRIResource Include="Assets\Strings\en-US\Resources.resw">
+      <Generator>ReswFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.cs</LastGenOutput>
+      <CustomToolNamespace>Q</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </PRIResource>
+    <None Include="project.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Assets\Strings\en-US\Resources.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resw</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Calendar\CalendarDayNamesTemplate.xaml.cs">
+      <DependentUpon>CalendarDayNamesTemplate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Calendar\CalendarDayTemplate.xaml.cs">
+      <DependentUpon>CalendarDayTemplate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Calendar\EventItemTemplate.xaml.cs">
+      <DependentUpon>EventItemTemplate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Contacts\ContactTemplate.xaml.cs">
+      <DependentUpon>ContactTemplate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Dialogs\SmileyDialog.xaml.cs">
+      <DependentUpon>SmileyDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Events\EventAttendanceTemplate.xaml.cs">
+      <DependentUpon>EventAttendanceTemplate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Converters\EventBackgroundConverter.cs" />
+    <Compile Include="Converters\DateTimeOffsetConverter.cs" />
+    <Compile Include="Converters\EventBorderConverter.cs" />
+    <Compile Include="Converters\IsEnabledConverter.cs" />
+    <Compile Include="Converters\GuestArrivalColorConverter.cs" />
+    <Compile Include="Converters\GuestArrivalSymbolConverter.cs" />
+    <Compile Include="Data_Manager\EventManagerDBContext.cs" />
+    <Compile Include="Data_Manager\DataModel\Contact.cs" />
+    <Compile Include="Data_Manager\DataModel\MeetingGuest.cs" />
+    <Compile Include="Models\EventAttendance\EventGuestCollection.cs" />
+    <Compile Include="ViewModels\Calendar\CalendarDayModel.cs" />
+    <Compile Include="ViewModels\Calendar\DayEvents.cs" />
+    <Compile Include="ViewModels\ContactPages\ContactItemModel.cs" />
+    <Compile Include="ViewModels\ContactPages\NewContactItemModel.cs" />
+    <Compile Include="Models\EventAttendance\EventGuest.cs" />
+    <Compile Include="ViewModels\EventPages\EventGuests\EventGuestListModel.cs" />
+    <Compile Include="ViewModels\ContactPages\BaseContactItemModel.cs" />
+    <Compile Include="Data_Manager\DataModel\Meeting.cs" />
+    <Compile Include="ViewModels\EventPages\EventItem\BaseEventItemModel.cs" />
+    <Compile Include="Data_Manager\DataModel\GustArrivalStatus.cs" />
+    <Compile Include="HamburgerMainPage.xaml.cs">
+      <DependentUpon>HamburgerMainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Models\AllContacts\ContactCollectionModel.cs" />
+    <Compile Include="Models\AllContacts\ContactCategoryModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\EventPages\EventItem\EventItemModel.cs" />
+    <Compile Include="ViewModels\EventPages\EventItem\NewEventItemModel.cs" />
+    <Compile Include="ViewModels\TopLevel\CalendarModel.cs" />
+    <Compile Include="ViewModels\AppLevelModel.cs" />
+    <Compile Include="ViewModels\TopLevel\MyContactsModel.cs" />
+    <Compile Include="ViewModels\Settings\AboutModel.cs" />
+    <Compile Include="ViewModels\Settings\SettingsModel.cs" />
+    <Compile Include="Views\EventItemPages\AddRemoveEventGuestsPage.xaml.cs">
+      <DependentUpon>AddRemoveEventGuestsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EventItemPages\EventGuestListPage.xaml.cs">
+      <DependentUpon>EventGuestListPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EventItemPages\EventItemPage.xaml.cs">
+      <DependentUpon>EventItemPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\EventItemPages\EventGuestAttendancePage.xaml.cs">
+      <DependentUpon>EventGuestAttendancePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ContactPages\ContactItemPage.xaml.cs">
+      <DependentUpon>ContactItemPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Settings\AboutPage.xaml.cs">
+      <DependentUpon>AboutPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Settings\SettingsPage.xaml.cs">
+      <DependentUpon>SettingsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ContactPages\MyContactsPage.xaml.cs">
+      <DependentUpon>MyContactsPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\CalendarPages\CalendarMonthPage.xaml.cs">
+      <DependentUpon>CalendarMonthPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Data_Manager\SqLiteManager.cs">
+      <Generator>resfilecodegenerator</Generator>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <AppxManifest Include="Package.appxmanifest">
+      <SubType>Designer</SubType>
+    </AppxManifest>
+    <Content Include="Assets\Images\Events\Party\chinese-new-year01-100px.png" />
+    <Content Include="Assets\Images\Events\Party\cinco-mayo01-100px.png" />
+    <Content Include="Assets\Images\Events\Party\father-day02-100px.png" />
+    <Content Include="Assets\Images\Events\Party\Gerald-G-Campfires-and-cooking-cranes-5-100px.png" />
+    <Content Include="Assets\Images\Events\Party\graduation02-100px.png" />
+    <Content Include="Assets\Images\Events\Party\haft-seen-table-100px.png" />
+    <Content Include="Assets\Images\Events\Party\hanukkah01-100px.png" />
+    <Content Include="Assets\Images\Events\Party\jonata-Separation-100px.png" />
+    <Content Include="Assets\Images\Events\Party\ludo-100px.png" />
+    <Content Include="Assets\Images\Events\Meeting\desenhocs-100px.png" />
+    <Content Include="Assets\Images\Events\Meeting\empty-calendar-100px.png" />
+    <Content Include="Assets\Images\Events\General\Anonymous-Crown-100px.png" />
+    <Content Include="Assets\Images\Events\General\Community-by-Merlin2525-100px.png" />
+    <Content Include="Assets\Images\Events\General\Happy-Shopping-Girl-100px.png" />
+    <Content Include="Assets\Images\Events\General\littlestorefront-100px.png" />
+    <Content Include="Assets\Images\Events\General\ryanlerch-deck-of-cards-100px.png" />
+    <Content Include="Assets\Images\Events\General\Summer-2010-ClipArt7-HotDog-100px.png" />
+    <Content Include="Assets\Images\Events\Meeting\GS-Journal-100px.png" />
+    <Content Include="Assets\Images\Events\Meeting\1431399162-100px.png" />
+    <Content Include="Assets\Images\Events\Meeting\Interview-100px.png" />
+    <Content Include="Assets\Images\Events\Meeting\meeting-100px.png" />
+    <Content Include="Assets\Images\Events\Meeting\office-100px.png" />
+    <Content Include="Assets\Images\Events\Meeting\penguinadmin-100px.png" />
+    <Content Include="Assets\Images\Events\Meeting\podium-100px.png" />
+    <Content Include="Assets\Images\Events\Meeting\new-year03-100px.png" />
+    <Content Include="Assets\Images\Events\Party\mother-day01-100px.png" />
+    <Content Include="Assets\Images\Events\Party\Anonymous-Cake-1-100px.png" />
+    <Content Include="Assets\Images\Events\Party\Balloon-Horse-100px.png" />
+    <Content Include="Assets\Images\Events\Party\Champagne-Showers-1-by-Merlin2525-100px.png" />
+    <Content Include="Assets\Images\Events\Party\CHRISTMAS-TREE-2-100px.png" />
+    <Content Include="Assets\Images\Events\Party\Disco-ball-100px.png" />
+    <Content Include="Assets\Images\Events\Party\Distinguished-Gentleman-Dancing-by-Merlin2525-100px.png" />
+    <Content Include="Assets\Images\Events\Party\firecrackers-100px.png" />
+    <Content Include="Assets\Images\Events\Party\giardinaggio-100px.png" />
+    <Content Include="Assets\Images\Events\Party\Halloween-Baby-Costume-100px.png" />
+    <Content Include="Assets\Images\Events\Party\I-Love-You-Valentine-by-Merlin2525-100px.png" />
+    <Content Include="Assets\Images\Events\Party\johnny-automatic-champagne-on-ice-100px.png" />
+    <Content Include="Assets\Images\Events\Party\nicubunu-Chocolate-birthday-cake-100px.png" />
+    <Content Include="Assets\Images\Events\Party\pace-e-bene--architetto--01-100px.png" />
+    <Content Include="Assets\Images\Events\Party\partyhat-100px.png" />
+    <Content Include="Assets\Images\Events\Party\snowman-glossy-100px.png" />
+    <Content Include="Assets\Images\Events\Party\tom-Venetian-mask-100px.png" />
+    <Content Include="Assets\Images\Events\Party\trophy-100px.png" />
+    <Content Include="Assets\Images\Events\Sports\Golf-Course-Sports2010-100px.png" />
+    <Content Include="Assets\Images\Events\Sports\Happy-Camping-Archery-100px.png" />
+    <Content Include="Assets\Images\Events\Sports\johnny-automatic-girl-playing-soccer-100px.png" />
+    <Content Include="Assets\Images\Events\Sports\redblue-convertible-sports-car-100px.png" />
+    <Content Include="Assets\Images\Events\Sports\skatingpanda-100px.png" />
+    <Content Include="Assets\Images\Events\Sports\SnarkHunter-Arrow-in-the-gold-100px.png" />
+    <Content Include="Assets\Images\Events\Sports\sport-3-100px.png" />
+    <Content Include="Assets\Images\Events\Sports\sport-4-100px.png" />
+    <Content Include="Assets\Images\Events\Sports\sport-5-100px.png" />
+    <Content Include="Assets\Images\Events\Sports\sports-fan-100px.png" />
+    <Content Include="Assets\Images\Events\Sports\talkingsnowboardgirl-100px.png" />
+    <Content Include="Assets\Images\Events\Party\thanksgiving03-100px.png" />
+    <Content Include="Assets\Images\Guests\Business\1378052551-100px.png" />
+    <Content Include="Assets\Images\Guests\Business\1378052687-100px.png" />
+    <Content Include="Assets\Images\Guests\Business\3D-Glasses-4-by-Merlin2525-100px.png" />
+    <Content Include="Assets\Images\Guests\Business\big-wave-hello-100px.png" />
+    <Content Include="Assets\Images\Guests\Business\cooking-man-100px.png" />
+    <Content Include="Assets\Images\Guests\Business\deep-in-thought-100px.png" />
+    <Content Include="Assets\Images\Guests\Business\little-wave-hello-100px.png" />
+    <Content Include="Assets\Images\Guests\Business\man-chris-kempson-01-100px.png" />
+    <Content Include="Assets\Images\Guests\Business\msewtz-Business-Person-100px.png" />
+    <Content Include="Assets\Images\Guests\Business\person3-100px.png" />
+    <Content Include="Assets\Images\Guests\Business\person4-100px.png" />
+    <Content Include="Assets\Images\Guests\Business\person5-100px.png" />
+    <Content Include="Assets\Images\Guests\Business\person6-100px.png" />
+    <Content Include="Assets\Images\Guests\Business\person7-100px.png" />
+    <Content Include="Assets\Images\Guests\Business\person8-100px.png" />
+    <Content Include="Assets\Images\Guests\Business\person9-100px.png" />
+    <Content Include="Assets\Images\Guests\Business\pose-oh-crap-what-did-i-just-do2-100px.png" />
+    <Content Include="Assets\Images\Guests\Business\side-face1-100px.png" />
+    <Content Include="Assets\Images\Guests\Business\side-face2-100px.png" />
+    <Content Include="Assets\Images\Guests\Business\therapist-100px.png" />
+    <Content Include="Assets\Images\Guests\Business\yyycatch-people-biz-female-cyan-100px.png" />
+    <Content Include="Assets\Images\Guests\Business\yyycatch-people-biz-female-pink-100px.png" />
+    <Content Include="Assets\Images\Guests\Business\yyycatch-people-biz-female-sad-100px.png" />
+    <Content Include="Assets\Images\Guests\Business\yyycatch-people-biz-female-smile-100px.png" />
+    <Content Include="Assets\Images\Guests\Business\yyycatch-people-biz-male-blue-4-100px.png" />
+    <Content Include="Assets\Images\Guests\Business\yyycatch-people-biz-male-pink-100px.png" />
+    <Content Include="Assets\Images\Guests\Business\yyycatch-people-biz-male-sad-100px.png" />
+    <Content Include="Assets\Images\Guests\Business\yyycatch-people-biz-male-smile-100px.png" />
+    <Content Include="Assets\Images\Guests\Business\yyycatch-people-biz2-male-sad-100px.png" />
+    <Content Include="Assets\Images\Guests\Business\yyycatch-people-biz2-male-smile-100px.png" />
+    <Content Include="Assets\Images\Guests\Cartoon\1368500161-100px.png" />
+    <Content Include="Assets\Images\Guests\Cartoon\570104-100px.png" />
+    <Content Include="Assets\Images\Guests\Cartoon\570105-100px.png" />
+    <Content Include="Assets\Images\Guests\Cartoon\570106-100px.png" />
+    <Content Include="Assets\Images\Guests\Cartoon\570107-100px.png" />
+    <Content Include="Assets\Images\Guests\Cartoon\570108-100px.png" />
+    <Content Include="Assets\Images\Guests\Cartoon\570109-100px.png" />
+    <Content Include="Assets\Images\Guests\Cartoon\570110-100px.png" />
+    <Content Include="Assets\Images\Guests\Cartoon\570111-100px.png" />
+    <Content Include="Assets\Images\Guests\Cartoon\570112-100px.png" />
+    <Content Include="Assets\Images\Guests\Cartoon\570113-100px.png" />
+    <Content Include="Assets\Images\Guests\Cartoon\570115-100px.png" />
+    <Content Include="Assets\Images\Guests\Cartoon\570116-100px.png" />
+    <Content Include="Assets\Images\Guests\Cartoon\570117-100px.png" />
+    <Content Include="Assets\Images\Guests\Cartoon\570118-100px.png" />
+    <Content Include="Assets\Images\Guests\Cartoon\570119-100px.png" />
+    <Content Include="Assets\Images\Guests\Cartoon\570122-100px.png" />
+    <Content Include="Assets\Images\Guests\Cartoon\570123-100px.png" />
+    <Content Include="Assets\Images\Guests\Cartoon\570124-100px.png" />
+    <Content Include="Assets\Images\Guests\Cartoon\570125-100px.png" />
+    <Content Include="Assets\Images\Guests\Cartoon\570126-100px.png" />
+    <Content Include="Assets\Images\Guests\Cartoon\570127-100px.png" />
+    <Content Include="Assets\Images\PeopleGroups\mix-and-match-characters-show-off-100px.png" />
+    <Content Include="Assets\Images\PeopleGroups\nicubunu-Abstract-people-100px.png" />
+    <None Include="Package.StoreAssociation.xml" />
+    <Content Include="Assets\Logos\BadgeLogo.scale-100.png" />
+    <Content Include="Assets\Logos\BadgeLogo.scale-200.png" />
+    <Content Include="Assets\Logos\SplashScreen.scale-100.png" />
+    <Content Include="Assets\Logos\SplashScreen.scale-200.png" />
+    <Content Include="Assets\Logos\Square150x150Logo.scale-100.png" />
+    <Content Include="Assets\Logos\Square150x150Logo.scale-200.png" />
+    <Content Include="Assets\Logos\Square310x310Logo.scale-100.png" />
+    <Content Include="Assets\Logos\Square310x310Logo.scale-200.png" />
+    <Content Include="Assets\Logos\Square44x44Logo.scale-100.png" />
+    <Content Include="Assets\Logos\Square44x44Logo.scale-200.png" />
+    <Content Include="Assets\Logos\Square44x44Logo.scale-400.png" />
+    <Content Include="Assets\Logos\Square71x71Logo.scale-100.png" />
+    <Content Include="Assets\Logos\Square71x71Logo.scale-200.png" />
+    <Content Include="Assets\Logos\Square71x71Logo.scale-400.png" />
+    <Content Include="Assets\Logos\StoreLogo.scale-100.png" />
+    <Content Include="Assets\Logos\StoreLogo.scale-200.png" />
+    <Content Include="Assets\Logos\Wide310x150Logo.scale-100.png" />
+    <Content Include="Assets\Logos\Wide310x150Logo.scale-200.png" />
+    <Content Include="Readme.txt" />
+    <Content Include="Resources\DesignData\DesignData.json" />
+    <None Include="Assets\Documents\AboutText.rtf" />
+    <None Include="ZeeEventsManager_StoreKey.pfx" />
+    <None Include="ZeeEventsManager_TemporaryKey.pfx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\Backgrounds\CustomBackground.jpg" />
+    <Content Include="Assets\Images\Attendance\Arrived.png" />
+    <Content Include="Assets\Images\Attendance\ArrivedLate.png" />
+    <Content Include="Assets\Images\Attendance\DidNotCome.png" />
+    <Content Include="Assets\Images\Attendance\Unknown.png" />
+    <Content Include="Assets\Images\Events\Meeting\Calendar.png" />
+    <Content Include="Assets\Images\Events\Event01.png" />
+    <Content Include="Assets\Images\Events\Meeting\EventGroup.png" />
+    <Content Include="Assets\Images\Events\Meeting\NewMeeting.png" />
+    <Content Include="Assets\Images\Guests\Person01.png" />
+    <Content Include="Assets\Images\UI\smiley-icon.png" />
+    <Content Include="Assets\Images\UI\smiley-sad-icon.png" />
+    <Content Include="Properties\Default.rd.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="Controls\Calendar\CalendarDayNamesTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\Calendar\CalendarDayTemplate.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Calendar\EventItemTemplate.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\Contacts\ContactTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\Dialogs\SmileyDialog.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\Events\EventAttendanceTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="HamburgerMainPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Resources\DataTemplates.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Page>
+    <Page Include="Resources\StandardResources.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Page>
+    <Page Include="Views\EventItemPages\AddRemoveEventGuestsPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\EventItemPages\EventGuestListPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\EventItemPages\EventItemPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\EventItemPages\EventGuestAttendancePage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ContactPages\ContactItemPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Settings\AboutPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Settings\SettingsPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ContactPages\MyContactsPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\CalendarPages\CalendarMonthPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CyberFeedforward.WinStore.Common\CyberFeedForward.WUP.Common.csproj">
+      <Project>{7e20528d-7e81-4128-9345-f8c21c211053}</Project>
+      <Name>CyberFeedForward.WUP.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
+    <VisualStudioVersion>14.0</VisualStudioVersion>
+  </PropertyGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\WindowsXaml\v$(VisualStudioVersion)\Microsoft.Windows.UI.Xaml.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

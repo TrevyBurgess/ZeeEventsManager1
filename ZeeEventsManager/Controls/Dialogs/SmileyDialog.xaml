@@ -1,0 +1,71 @@
+﻿<ContentDialog
+    x:Class="CyberFeedForward.WUP.Common.WPF.SmileyDialog"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Title="Send Feedback"
+    PrimaryButtonText="Send Feedback"
+    SecondaryButtonText="Close"
+    PrimaryButtonClick="ContentDialog_SendFeedback"
+    SecondaryButtonClick="ContentDialog_Cancel"
+    Name="SmileyDialogControl" Padding="0" >
+    <StackPanel Margin="0" Name="SmileyStackPanel" >
+        <RelativePanel
+                Visibility="{x:Bind ShowSmileMessage, Mode=OneWay, Converter={StaticResource ConvertBoolToVisible}}" >
+            <TextBlock x:Uid="SmileyDialog_ThankYouForFeedback" Text="~ Thank-you for your feedback." />
+            <Image Name="HappyImage"
+                    RelativePanel.AlignRightWithPanel="True"
+                    Source="{x:Bind HappyFace}"
+                    Width="25" Height="25" Stretch="UniformToFill" />
+            <StackPanel
+                RelativePanel.Below="HappyImage"
+                Padding="0,5,0,5" Name="SmileyMessage" >
+                <TextBlock x:Uid="SmileyDialog_WhatDidYouLike" Text="~ What did you like?" />
+                <TextBlock x:Uid="SmileyDialog_HowToImprove" Text="~ How can we improve?" />
+            </StackPanel>
+        </RelativePanel>
+
+        <RelativePanel
+            Visibility="{x:Bind ShowSmileMessage, Mode=OneWay, Converter={StaticResource ConvertReversedBoolToVisible}}" >
+            <TextBlock x:Uid="SmileyDialog_ThankYouForFeedback" Text="~ Thank-you for your feedback." />
+            <Image Name="SadImage"
+                    RelativePanel.AlignRightWithPanel="True"
+                    Source="{x:Bind SadFace}"
+                    Width="25" Height="25" Stretch="UniformToFill" />
+            <StackPanel
+                RelativePanel.Below="SadImage"
+                Padding="0,5,0,5" Name="FrownMessage" >
+                <TextBlock x:Uid="SmileyDialog_WhatWasTheProblem" Text="~ What was the problem you faced?" />
+                <TextBlock x:Uid="SmileyDialog_HowToImprove" Text="~ How can we improve?" />
+            </StackPanel>
+        </RelativePanel>
+        
+        <TextBox TextWrapping="Wrap"
+                 AcceptsReturn="True" MinHeight="75" Text="{x:Bind FeedbackMessage, Mode=TwoWay}" />
+        <CheckBox
+            x:Uid="SmileyDialog_ShowEmailBox"
+            Name="ShowEmailBox"
+            ToolTipService.ToolTip="~ please reply"
+            Margin="0,5,0,0" Padding="5,5,0,0"
+            Content="~ Please reply" />
+        <TextBox Header="Email Address"
+                 Margin="0,5,0,0" Text="{x:Bind EmailAddress, Mode=TwoWay}" Name="EmailAddressBox"
+                 Visibility="{Binding ElementName=ShowEmailBox, Path=IsChecked, Converter={StaticResource ConvertBoolToVisible}}" />
+
+        <HyperlinkButton
+            x:Uid="Settings_PrivacyPolicy"
+            Name="PrivacyPolicy"
+            NavigateUri="http://CyberFeedForward.com/ZeeEventsManager/PrivacyPolicy.html"
+            Content="~ Privacy Policy" />
+
+        <TextBlock FontWeight="Bold" x:Uid="SmileyDialog_NoteTitle" Text="~ Note: " />
+        <TextBlock TextWrapping="Wrap" x:Uid="SmileyDialog_EmailClientSelectionMessage" >
+            ~ When you click 'Send Feedback' button,
+            an email client selector might appear.
+            If it does, please select your favorite email
+            client to send your feedback email.
+        </TextBlock>
+    </StackPanel>
+</ContentDialog>
